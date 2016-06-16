@@ -1,11 +1,10 @@
-require 'byebug'
-require 'json'
+ require 'json'
 
 class Session
 
   def initialize(req)
-    if req.cookies['_rails_otr']
-      @session_cookie = JSON.parse(req.cookies['_rails_otr'])
+    if req.cookies['_mvc_otr']
+      @session_cookie = JSON.parse(req.cookies['_mvc_otr'])
     else
       @session_cookie = {}
     end
@@ -21,6 +20,6 @@ class Session
 
 
   def store_session(res)
-    res.set_cookie('_rails_otr', { path: '/', value: @session_cookie.to_json })
+    res.set_cookie('_mvc_otr', { path: '/', value: @session_cookie.to_json })
   end
 end

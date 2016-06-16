@@ -1,4 +1,3 @@
-require 'byebug'
 require_relative 'db_connection'
 require 'active_support/inflector'
 
@@ -66,7 +65,7 @@ class SQLObject
   end
 
   def attribute_values
-    @attributes.values 
+    @attributes.values
   end
 
   def insert

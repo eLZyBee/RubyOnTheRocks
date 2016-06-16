@@ -2,8 +2,8 @@ class Flash
   attr_reader :now
 
   def initialze(req)
-    if req.cookies['_rails_otr_flash']
-      cookie = JSON.parse(req.cookies['_rails_otr_flash'])
+    if req.cookies['_mvc_otr_flash']
+      cookie = JSON.parse(req.cookies['_mvc_otr_flash'])
     else
       cookie = {}
     end
@@ -20,7 +20,7 @@ class Flash
   end
 
   def store_flash(res)
-    res.set_cookie('_rails_otr_flash', { path: '/', value: @regular_flash.to_json })
+    res.set_cookie('_mvc_otr_flash', { path: '/', value: @regular_flash.to_json })
   end
 
 end

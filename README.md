@@ -1,9 +1,9 @@
 # Ruby on the Rocks
 
-## Rails OTR
+## MVC on the Rocks
 
-'Rails On The Rocks' uses Rack middleware to emulate some Ruby on Rails functionality. It supports a server and controls routing within a project.
+'MVC On The Rocks' uses Rack middleware to provide an MVC functionality. Supporting light layers for models, views and controllers.
 
-## Active Record OTR
+## ORM on the Rocks
 
-'Active Record On The Rocks' uses customized SQL queries to emulate Active Record in Rails. It supports associations and searching based on those in the database.
+'ORM On The Rocks' uses customized SQL queries to take care of object relational mapping between your web app and your database. Supporting database searching bases on model level associations. 
