@@ -86,7 +86,7 @@ module Associatable
       source_keys = source_opts.primary_key, source_opts.foreign_key
 
       matching_val = self.send(through_keys.last)
-      result = DBConnection.execute(<<-SQL, matching_val)
+      result = DBLink.execute(<<-SQL, matching_val)
         SELECT #{source_table}.*
         FROM #{through_table}
         JOIN #{source_table}
