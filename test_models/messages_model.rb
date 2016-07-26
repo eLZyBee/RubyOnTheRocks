@@ -1,4 +1,4 @@
-require "../lib/orm_otr/associatable"
+require_relative "../lib/orm_otr/associatable"
 
 # Classes provided for demonstration purposes.
 
