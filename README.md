@@ -6,12 +6,22 @@
 
 ## Getting Started
 
-To get started, clone this directory and replace the paths in `lib/db_link.rb` to your relevant database. Or use the `messages.sql` file provided as default.
+To get started, clone this directory and replace the paths in `lib/orm_otr/db_link.rb` to your relevant .sql database in the root file. Or use the `messages.sql` file provided by default.
+
+Load pry (or your preferred REPL) from the root folder and load your model as shown:
+```ruby
+$ pry
+[1] pry(main)> load 'test_models/messages_model.rb'
+=> true
+[2] pry(main)> Message.all
+=> [#<Message:0x007fa5243b6318 @attributes={:id=>1, :message=>"What's up everybody?", :user_id=>1}>,
+ #<Message:0x007fa5243b6250 @attributes={:id=>2, :message=>"Just relaxing over here.", :user_id=>2}>]
+```
 
 You can create your models in the style of the `messages_model.rb` in the test_models folder. Be sure to require `associatable.rb` by including the following at the top of your model file.
 
 ```ruby
-require "../lib/orm_otr/associatable"
+require_relative "../lib/orm_otr/associatable"
 ```
 
 Each class you define must end with the `finalize!` method in order to defined the contained methods. This might look like the following:
@@ -37,8 +47,8 @@ All requiring the class table and pointer to the `foreign_key`.
 You can query your models using the following terms to retrieve their information from the database.
 
 ```ruby
-# Retrieve all messages starting with a capital B.
-Message.where("message LIKE 'B%'")
+# Retrieve all messages where user_id is 3.
+Message.where(user_id: 3)
 
 # Retrieve all messages.
 Message.all
