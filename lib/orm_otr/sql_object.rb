@@ -1,3 +1,4 @@
+require_relative 'associatable'
 require_relative 'db_link'
 require 'active_support/inflector'
 

@@ -18,13 +18,7 @@ $ pry
  #<Message:0x007fa5243b6250 @attributes={:id=>2, :message=>"Just relaxing over here.", :user_id=>2}>]
 ```
 
-You can create your models in the style of the `messages_model.rb` in the test_models folder. Be sure to require `associatable.rb` by including the following at the top of your model file.
-
-```ruby
-require_relative "../lib/orm_otr/associatable"
-```
-
-Each class you define must end with the `finalize!` method in order to defined the contained methods. This might look like the following:
+You can create your models in the style of the `messages_model.rb` in the test_models folder. Each class you define must end with the `finalize!` method in order to defined the contained methods. This might look like the following:
 
 ```ruby
 class Message < SQLObject

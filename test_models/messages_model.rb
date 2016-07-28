@@ -1,4 +1,4 @@
-require_relative "../lib/orm_otr/associatable"
+require_relative "../lib/orm_otr/sql_object"
 
 # Classes provided for demonstration purposes.
 
